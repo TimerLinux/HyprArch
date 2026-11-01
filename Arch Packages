@@ -1,5 +1,5 @@
 1
-sudo pacman -S hyprland kitty nautilus
+sudo pacman -S hyprland kitty nautilus firefox
 
 3.
 sudo pacman -S \
