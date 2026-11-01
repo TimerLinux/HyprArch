@@ -125,19 +125,19 @@ source = "wallpaper"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "hyprland", "kitty", "qt" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kitty", "qt" ]
 
 [wallpaper]
-directory = "/home/arch/Obrazy/Tapety"
+directory = "/home/cachyos/Obrazy/Tapety"
 
     [wallpaper.default]
-    path = "/home/arch/Obrazy/Tapety/wallhaven-rd83mq.jpg"
+    path = "/home/cachyos/Obrazy/Tapety/wallhaven-9okkr1.jpg"
 
     [wallpaper.last]
-    path = "/home/arch/Obrazy/Tapety/wallhaven-rd83mq.jpg"
+    path = "/home/cachyos/Obrazy/Tapety/wallhaven-9okkr1.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/arch/Obrazy/Tapety/wallhaven-rd83mq.jpg"
+    path = "/home/cachyos/Obrazy/Tapety/wallhaven-9okkr1.jpg"
 
 [widget.clock]
 anchor = true
