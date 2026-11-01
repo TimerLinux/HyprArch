@@ -1,0 +1,2 @@
+# HyprArch
+dotfiles + packages
