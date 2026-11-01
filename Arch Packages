@@ -1,0 +1,46 @@
+1
+sudo pacman -S hyprland kitty nautilus firefox
+
+3.
+sudo pacman -S \
+xdg-desktop-portal-hyprland \
+power-profiles-daemon \
+fastfetch \
+fish \
+adw-gtk-theme \
+nwg-look \
+qt6ct \
+qt6-wayland \
+qt5-wayland \
+pacman-contrib \
+ly \
+uwsm \
+speech-dispatcher \
+python-pillow \
+icoextract \
+libva-nvidia-driver \
+oxygen-cursors \
+flatpak \
+btop \
+noctalia
+
+4.
+sudo pacman -S \
+gnome-text-editor  \
+gnome-disk-utility \
+baobab \
+loupe \
+gnome-calculator \
+vlc \
+bazaar
+
+5.
+xdg-user-dirs-update
+sudo systemctl disable getty@tty1.service
+sudo systemctl enable ly@tty1.service
+chsh -s /usr/bin/fish
+sudo usermod -c "Arch Linux" $USER
+sudo modprobe ntsync
+echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
+sudo systemctl enable --now paccache.timer
+xdg-mime default org.gnome.Nautilus.desktop inode/directory
