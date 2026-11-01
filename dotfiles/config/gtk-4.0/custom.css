@@ -1,0 +1,51 @@
+/* Przezroczyste okno Nautilusa (blur robi Hyprland) */
+.nautilus-window {
+    background-color: alpha(@window_bg_color, 0.5);
+}
+.nautilus-window .view,
+.nautilus-window .navigation-sidebar,
+.nautilus-window headerbar,
+.nautilus-window toolbarview {
+    background-color: transparent;
+}
+
+/* Panel boczny (Katalog domowy, Ulubione, Kosz...) */
+.nautilus-window .sidebar-pane,
+.nautilus-window .sidebar-pane toolbarview,
+.nautilus-window .sidebar-pane headerbar {
+    background-color: transparent;
+}
+
+/* Bez cienkiej linii oddzielającej panel boczny od listy plików */
+.nautilus-window .sidebar-pane {
+    border: none;
+    box-shadow: none;
+}
+
+/* Wąskie okno: dolny pasek z nawigacją, bez tła i linii nad nim
+   (to samo dla górnego paska, który dostaje linię przy przewijaniu) */
+.nautilus-window toolbarview > .bottom-bar,
+.nautilus-window toolbarview > .top-bar,
+.nautilus-window actionbar,
+.nautilus-window actionbar > revealer > box {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Linia pojawiająca się, gdy lista plików jest dłuższa niż okno
+   ("raised" na paskach i cień przewijania przy krawędzi) */
+.nautilus-window toolbarview > .bottom-bar.raised,
+.nautilus-window toolbarview > .top-bar.raised,
+.nautilus-window scrolledwindow > undershoot.top,
+.nautilus-window scrolledwindow > undershoot.bottom {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Miniatury bez szachownicy pod przezroczystymi ikonami */
+.nautilus-window .file-thumbnail {
+    background: none;
+    box-shadow: none;
+}
