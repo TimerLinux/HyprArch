@@ -20,6 +20,7 @@ speech-dispatcher \
 python-pillow \
 icoextract \
 libva-nvidia-driver \
+nvidia-settings \
 oxygen-cursors \
 noctalia
 
