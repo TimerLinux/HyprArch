@@ -1,3 +1,2 @@
 # HyprArch
-1.Packages
-2.Dotfiles
+Arch Packages + Hyprland Dotfiles + Noctalia Settings
