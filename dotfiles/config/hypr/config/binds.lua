@@ -2,7 +2,7 @@ local terminal    = "uwsm app -- kitty"
 local fileManager = "uwsm app -- nautilus --new-window"
 local browser     = "uwsm app -- firefox"
 local text        = "uwsm app -- gnome-text-editor --new-window"
-local tasks	      = "uwsm app -- kitty -e btop"
+local tasks	  = "uwsm app -- kitty -e btop"
 local mainMod     = "SUPER"
 local ipc         = "noctalia msg "
 

@@ -1,16 +1,7 @@
-// Fastfetch: one frame with categories (SYSTEM / HARDWARE / TIME) and items.
-// Needs a Nerd Font in the terminal, e.g. kitty.conf: font_family MesloLGS Nerd Font
-// Frame, icons and category titles follow the Noctalia theme; item names and values are always white.
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-
-    "logo": {
-        // Wbudowane logo Arch Linuxa w ASCII (bez pliku obrazka).
-        // Mniejsza wersja: "arch_small"
-        "source": "arch",
-        "color": { "1": "green", "2": "green" },
-        "padding": { "top": 1, "left": 2, "right": 8 }
-    },
+    
+    "logo": { "type": "none" },
 
     "display": {
         "separator": "",
@@ -18,7 +9,6 @@
     },
 
     "modules": [
-        "break",
         { "type": "custom", "format": "\u001b[32m╭─ \u001b[1mSYSTEM\u001b[0m\u001b[32m ─────╮\u001b[0m" },
         { "type": "os", "key": "\u001b[32m│  \uf303  \u001b[38;2;255;255;255mOS       \u001b[32m│  " },
         { "type": "kernel", "key": "\u001b[32m│  \uf17c  \u001b[38;2;255;255;255mKERNEL   \u001b[32m│  " },
@@ -39,7 +29,5 @@
         { "type": "custom", "format": "  \u001b[31m●  \u001b[32m●  \u001b[33m●  \u001b[34m●  \u001b[35m●  \u001b[36m●  \u001b[37m●\u001b[0m" },
         // Odstęp od dołu (przed znakiem zachęty terminala)
         "break",
-        "break",
-        "break"
     ]
 }
