@@ -1,2 +1,3 @@
 # HyprArch
-dotfiles + packages
+1.Packages
+2.Dotfiles
