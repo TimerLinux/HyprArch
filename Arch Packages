@@ -22,6 +22,7 @@ icoextract \
 libva-nvidia-driver \
 nvidia-settings \
 oxygen-cursors \
+imagemagick \
 noctalia
 
 4.
