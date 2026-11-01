@@ -6,6 +6,7 @@ sudo pacman -S \
 xdg-desktop-portal-hyprland \
 power-profiles-daemon \
 fastfetch \
+btop \
 fish \
 adw-gtk-theme \
 nwg-look \
@@ -20,7 +21,6 @@ python-pillow \
 icoextract \
 libva-nvidia-driver \
 oxygen-cursors \
-btop \
 noctalia
 
 4.
