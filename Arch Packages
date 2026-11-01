@@ -20,7 +20,6 @@ python-pillow \
 icoextract \
 libva-nvidia-driver \
 oxygen-cursors \
-flatpak \
 btop \
 noctalia
 
@@ -31,8 +30,7 @@ gnome-disk-utility \
 baobab \
 loupe \
 gnome-calculator \
-vlc \
-bazaar
+vlc
 
 5.
 xdg-user-dirs-update
