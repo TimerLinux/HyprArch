@@ -45,7 +45,6 @@ sudo systemctl disable getty@tty1.service
 sudo systemctl enable ly@tty1.service
 chsh -s /usr/bin/fish
 sudo usermod -c "Arch Linux" $USER
-sudo modprobe ntsync
 echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 sudo systemctl enable --now paccache.timer
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
