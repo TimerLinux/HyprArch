@@ -6,12 +6,12 @@ local tasks	      = "uwsm app -- kitty -e btop"
 local mainMod     = "SUPER"
 local ipc         = "noctalia msg "
 
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
-hl.bind(mainMod .. " + RETURN",     hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + E",     hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + B",     hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + T",     hl.dsp.exec_cmd(text))
-hl.bind(mainMod .. " + P",     hl.dsp.exec_cmd(tasks))
+hl.bind(mainMod .. " + SPACE",     hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
+hl.bind(mainMod .. " + RETURN",    hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + E",         hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + B",         hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + T",         hl.dsp.exec_cmd(text))
+hl.bind(mainMod .. " + P",         hl.dsp.exec_cmd(tasks))
 
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(0))
