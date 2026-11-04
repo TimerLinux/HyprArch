@@ -43,7 +43,7 @@ radius = 80
 show_running = false
 
 [hooks]
-colors_changed = "./.config//hypr/scripts/theme-reload"
+colors_changed = "./.config/hypr/scripts/theme-reload"
 started = "sh -c \"sleep 1; canberra-gtk-play -i service-login\""
 
 [location]
@@ -131,13 +131,13 @@ wallpaper_scheme = "m3-content"
 directory = "/home/arch/Obrazy/Tapety"
 
     [wallpaper.default]
-    path = "/home/arch/Obrazy/Tapety/tides-and-peaks-the-dual-beauty-of-beach-and-mountain-eq-2560x1440.jpg"
+    path = "/home/arch/Obrazy/Tapety/misty-forest-mountains-with-lush-green-trees-dd-2560x1440.jpg"
 
     [wallpaper.last]
-    path = "/home/arch/Obrazy/Tapety/tides-and-peaks-the-dual-beauty-of-beach-and-mountain-eq-2560x1440.jpg"
+    path = "/home/arch/Obrazy/Tapety/misty-forest-mountains-with-lush-green-trees-dd-2560x1440.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/arch/Obrazy/Tapety/tides-and-peaks-the-dual-beauty-of-beach-and-mountain-eq-2560x1440.jpg"
+    path = "/home/arch/Obrazy/Tapety/misty-forest-mountains-with-lush-green-trees-dd-2560x1440.jpg"
 
 [widget.clock]
 anchor = true
