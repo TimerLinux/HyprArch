@@ -5,10 +5,10 @@ cd paru
 makepkg -si
 
 2.
-sudo pacman -S hyprland kitty nautilus zen-browser-bin
+paru -S hyprland kitty nautilus zen-browser-bin
 
 3.
-sudo pacman -S \
+paru -S \
 xdg-desktop-portal-hyprland \
 power-profiles-daemon \
 fastfetch \
@@ -30,7 +30,7 @@ newaita-reborn-icons-git \
 noctalia
 
 4.
-sudo pacman -S \
+paru -S \
 gnome-text-editor  \
 gnome-disk-utility \
 baobab \
