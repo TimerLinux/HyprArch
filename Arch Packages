@@ -1,10 +1,11 @@
-1
-sudo pacman -S hyprland kitty nautilus firefox
-
+1.
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
+
+2.
+sudo pacman -S hyprland kitty nautilus zen-browser-bin
 
 3.
 sudo pacman -S \
