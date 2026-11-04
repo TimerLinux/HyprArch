@@ -14,7 +14,12 @@ start = [ "cpu", "sysmon", "ram" ]
 widget_spacing = 16
 
 [control_center]
+circular_avatar = false
+show_avatar_border = false
 sidebar = "full"
+
+    [control_center.calendar]
+    show_events_card = false
 
     [[control_center.shortcuts]]
     type = "wifi"
@@ -26,13 +31,7 @@ sidebar = "full"
     type = "nightlight"
 
     [[control_center.shortcuts]]
-    type = "notification"
-
-    [[control_center.shortcuts]]
-    type = "dark_mode"
-
-    [[control_center.shortcuts]]
-    type = "caffeine"
+    type = "power_profile"
 
 [dock]
 background_opacity = 0.4999999888241291
@@ -89,6 +88,7 @@ widget_order = [ "lockscreen-login-box@DP-3" ]
         show_weather = true
 
 [shell]
+avatar_path = "/home/arch/.config/hypr/avatar.png"
 launch_apps_as_systemd_services = true
 polkit_agent = true
 settings_window_translucent = true
@@ -131,13 +131,13 @@ wallpaper_scheme = "m3-content"
 directory = "/home/arch/Obrazy/Tapety"
 
     [wallpaper.default]
-    path = "/home/arch/Obrazy/Tapety/wallhaven-mdjrqy.jpg"
+    path = "/home/arch/Obrazy/Tapety/tides-and-peaks-the-dual-beauty-of-beach-and-mountain-eq-2560x1440.jpg"
 
     [wallpaper.last]
-    path = "/home/arch/Obrazy/Tapety/wallhaven-mdjrqy.jpg"
+    path = "/home/arch/Obrazy/Tapety/tides-and-peaks-the-dual-beauty-of-beach-and-mountain-eq-2560x1440.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/arch/Obrazy/Tapety/wallhaven-mdjrqy.jpg"
+    path = "/home/arch/Obrazy/Tapety/tides-and-peaks-the-dual-beauty-of-beach-and-mountain-eq-2560x1440.jpg"
 
 [widget.clock]
 anchor = true
