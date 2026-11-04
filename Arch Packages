@@ -1,15 +1,8 @@
-# AUR HELPER #
-sudo pacman -S --needed base-devel git
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
+# FIRST STEP #
+sudo pacman -S hyprland kitty nautilus firefox
 
 # CORE #
-paru -S \
-hyprland \
-kitty \
-nautilus \
-zen-browser-bin \
+sudo pacman -S \
 xdg-desktop-portal-hyprland \
 power-profiles-daemon \
 fastfetch \
@@ -26,13 +19,11 @@ uwsm \
 speech-dispatcher \
 python-pillow \
 icoextract \
-bibata-cursor-theme-bin \
-newaita-reborn-icons-git \
 libva-nvidia-driver \
 noctalia
 
 # APPS #
-paru -S \
+sudo pacman -S \
 gnome-text-editor  \
 gnome-disk-utility \
 baobab \
