@@ -35,7 +35,7 @@ loupe \
 gnome-calculator \
 vlc
 
-5.
+4.
 xdg-user-dirs-update
 sudo systemctl disable getty@tty1.service
 sudo systemctl enable ly@tty1.service
