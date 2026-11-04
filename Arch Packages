@@ -1,14 +1,15 @@
-1.
+# AUR HELPER #
 sudo pacman -S --needed base-devel git
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 
-2.
-paru -S hyprland kitty nautilus zen-browser-bin
-
-3.
+# CORE #
 paru -S \
+hyprland \
+kitty \
+nautilus \
+zen-browser-bin \
 xdg-desktop-portal-hyprland \
 power-profiles-daemon \
 fastfetch \
@@ -27,7 +28,9 @@ python-pillow \
 icoextract \
 bibata-cursor-theme-bin \
 newaita-reborn-icons-git \
-noctalia \
+noctalia
+
+# APPS #
 gnome-text-editor  \
 gnome-disk-utility \
 baobab \
@@ -35,7 +38,7 @@ loupe \
 gnome-calculator \
 vlc
 
-4.
+# CONFIG #
 xdg-user-dirs-update
 sudo systemctl disable getty@tty1.service
 sudo systemctl enable ly@tty1.service
