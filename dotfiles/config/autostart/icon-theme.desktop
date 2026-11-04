@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Icon theme
-Exec=gsettings set org.gnome.desktop.interface icon-theme Newaita-reborn-gray-dark
