@@ -28,7 +28,7 @@ python-pillow \
 icoextract \
 bibata-cursor-theme-bin \
 newaita-reborn-icons-git \
-nibva-nvidia-driver \
+libva-nvidia-driver \
 noctalia
 
 # APPS #
