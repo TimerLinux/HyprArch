@@ -27,10 +27,7 @@ python-pillow \
 icoextract \
 bibata-cursor-theme-bin \
 newaita-reborn-icons-git \
-noctalia
-
-4.
-paru -S \
+noctalia \
 gnome-text-editor  \
 gnome-disk-utility \
 baobab \
