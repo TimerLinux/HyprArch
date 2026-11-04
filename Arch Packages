@@ -1,6 +1,11 @@
 1
 sudo pacman -S hyprland kitty nautilus firefox
 
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
 3.
 sudo pacman -S \
 xdg-desktop-portal-hyprland \
@@ -19,10 +24,8 @@ uwsm \
 speech-dispatcher \
 python-pillow \
 icoextract \
-libva-nvidia-driver \
-nvidia-settings \
-oxygen-cursors \
-imagemagick \
+bibata-cursor-theme-bin \
+newaita-reborn-icons-git \
 noctalia
 
 4.
