@@ -44,4 +44,6 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 cp -a ~/HyprArch/dotfiles/config/. ~/.config/
 cp -a ~/HyprArch/dotfiles/local/. ~/.local/
 chmod +x ~/.config/hypr/scripts/theme-reload
+mkdir -p ~/Obrazy/Wallpapers
+mkdir -p ~/Obrazy/Screenshots
 sudo reboot
