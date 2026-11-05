@@ -19,7 +19,6 @@ uwsm \
 speech-dispatcher \
 python-pillow \
 icoextract \
-libva-nvidia-driver \
 noctalia
 
 # APPS #
