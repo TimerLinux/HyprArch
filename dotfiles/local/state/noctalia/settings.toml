@@ -127,6 +127,18 @@ wallpaper_scheme = "m3-content"
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kitty", "qt" ]
 
+[wallpaper]
+directory = "/home/arch/Obrazy/Wallpapers"
+
+    [wallpaper.default]
+    path = "/home/arch/Obrazy/Wallpapers/black-volcanic-sand-3840x2160-26446.jpg"
+
+    [wallpaper.last]
+    path = "/home/arch/Obrazy/Wallpapers/black-volcanic-sand-3840x2160-26446.jpg"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/arch/Obrazy/Wallpapers/black-volcanic-sand-3840x2160-26446.jpg"
+
 [widget.clock]
 anchor = true
 
