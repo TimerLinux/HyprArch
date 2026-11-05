@@ -22,7 +22,6 @@ icoextract \
 base-devel \
 git \
 oxygen-cursors \
-papirus-icon-theme \
 noctalia
 
 # APPS #
