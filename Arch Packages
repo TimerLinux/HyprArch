@@ -19,6 +19,8 @@ uwsm \
 speech-dispatcher \
 python-pillow \
 icoextract \
+base-devel \
+git \
 noctalia
 
 # APPS #
