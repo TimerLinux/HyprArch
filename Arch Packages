@@ -19,7 +19,6 @@ uwsm \
 speech-dispatcher \
 python-pillow \
 icoextract \
-reflector \
 noctalia
 
 # APPS #
@@ -39,5 +38,6 @@ sudo usermod -c "Arch Linux" $USER
 echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 sudo systemctl enable --now paccache.timer
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
-sudo systemctl enable --now reflector.timer
-sudo systemctl start reflector.service
+cp -a ~/HyprArch/dotfiles/config/. ~/.config/
+cp -a ~/HyprArch/dotfiles/local/. ~/.local/
+chmod +x ~/.config/hypr/scripts/theme-reload
