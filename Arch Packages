@@ -1,9 +1,6 @@
 # FIRST STEP #
 sudo pacman -S hyprland kitty nautilus firefox
 
-# REPO #
-git clone https://github.com/TimerLinux/HyprArch.git
-
 # CORE #
 sudo pacman -S \
 xdg-desktop-portal-hyprland \
@@ -34,6 +31,7 @@ gnome-calculator \
 vlc
 
 # CONFIG #
+git clone https://github.com/TimerLinux/HyprArch.git
 sudo systemctl disable getty@tty1.service
 sudo systemctl enable ly@tty1.service
 chsh -s /usr/bin/fish
