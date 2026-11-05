@@ -19,7 +19,6 @@ uwsm \
 speech-dispatcher \
 python-pillow \
 icoextract \
-base-devel \
 git \
 oxygen-cursors \
 noctalia
