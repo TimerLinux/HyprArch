@@ -33,7 +33,6 @@ ark \
 vlc
 
 # CONFIG #
-xdg-user-dirs-update
 sudo systemctl disable getty@tty1.service
 sudo systemctl enable ly@tty1.service
 chsh -s /usr/bin/fish
