@@ -1,6 +1,8 @@
 # FIRST STEP #
 sudo pacman -S hyprland kitty nautilus firefox
 
+git clone https://github.com/TimerLinux/HyprArch.git
+
 # CORE #
 sudo pacman -S \
 xdg-desktop-portal-hyprland \
