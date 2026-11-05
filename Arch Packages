@@ -1,6 +1,7 @@
 # FIRST STEP #
 sudo pacman -S hyprland kitty nautilus firefox
 
+# REPO #
 git clone https://github.com/TimerLinux/HyprArch.git
 
 # CORE #
