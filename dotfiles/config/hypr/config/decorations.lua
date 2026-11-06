@@ -16,13 +16,15 @@ hl.config({
     decoration = {
         rounding         = 20,
         rounding_power   = 2,
-        shadow = {
-            enabled = false,
+    shadow = {
+        enabled = false,
         },
     blur = {
         enabled = true,
         size = 4,
         passes = 4,
+        xray = false,
+        new_optimizations = true
     },
     },
 })
