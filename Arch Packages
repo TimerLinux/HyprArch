@@ -22,6 +22,7 @@ icoextract \
 git \
 oxygen-cursors \
 libva-nvidia-driver \
+nvidia-settings \
 noctalia
 
 # APPS #
