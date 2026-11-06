@@ -21,6 +21,7 @@ python-pillow \
 icoextract \
 git \
 oxygen-cursors \
+libva-nvidia-driver \
 noctalia
 
 # APPS #
