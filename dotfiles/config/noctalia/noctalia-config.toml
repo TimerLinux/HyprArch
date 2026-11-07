@@ -104,8 +104,11 @@ settings_window_translucent = true
     alpha = 0.99999997764825821
 
 [theme]
+builtin = "Noctalia"
+community_palette = "Oxocarbon"
+mode = "dark"
 source = "wallpaper"
-wallpaper_scheme = "m3-tonal-spot"
+wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kitty", "qt" ]
@@ -115,13 +118,13 @@ wallpaper_scheme = "m3-tonal-spot"
 directory = "/home/arch/Obrazy/Wallpapers"
 
     [wallpaper.default]
-    path = "/home/arch/Obrazy/Wallpapers/1354199.jpeg"
+    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
 
     [wallpaper.last]
-    path = "/home/arch/Obrazy/Wallpapers/1354199.jpeg"
+    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/arch/Obrazy/Wallpapers/1354199.jpeg"
+    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
 
 [widget.clock]
 anchor = true
