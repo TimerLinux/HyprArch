@@ -4,7 +4,6 @@ sudo pacman -S hyprland kitty nautilus
 # CORE #
 sudo pacman -S \
 xdg-desktop-portal-hyprland \
-power-profiles-daemon \
 fastfetch \
 btop \
 fish \
