@@ -5,8 +5,10 @@ sound_volume = 0.99999997764825821
 background_opacity = 0.4999999888241291
 end = [ "tray", "volume", "session" ]
 margin_ends = 720
+padding = 16
 radius = 80
 start = [ "cpu", "sysmon", "ram", "workspaces" ]
+thickness = 32
 widget_spacing = 16
 
 [control_center]
