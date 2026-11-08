@@ -12,7 +12,9 @@ widget_spacing = 16
 [control_center]
 circular_avatar = false
 show_avatar_border = false
-show_shortcut_labels = false
+show_shortcut_labels = true
+sidebar = "full"
+sidebar_section = "full"
 
     [[control_center.shortcuts]]
     type = "wifi"
@@ -28,6 +30,17 @@ show_shortcut_labels = false
 
 [desktop_widgets]
 enabled = false
+
+[dock]
+background_opacity = 0.4999999888241291
+cross_axis_padding = 0
+enabled = true
+icon_size = 32
+item_spacing = 16
+launcher_custom_image = "/home/arch/.config/hypr/avatar.png"
+launcher_position = "start"
+radius = 80
+show_dots = true
 
 [hooks]
 colors_changed = "./.config/hypr/scripts/theme-reload"
@@ -118,13 +131,13 @@ wallpaper_scheme = "m3-content"
 directory = "/home/arch/Obrazy/Wallpapers"
 
     [wallpaper.default]
-    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
+    path = "/home/arch/Obrazy/Wallpapers/wallhaven-6l7dm7.png"
 
     [wallpaper.last]
-    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
+    path = "/home/arch/Obrazy/Wallpapers/wallhaven-6l7dm7.png"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
+    path = "/home/arch/Obrazy/Wallpapers/wallhaven-6l7dm7.png"
 
 [widget.clock]
 anchor = true
