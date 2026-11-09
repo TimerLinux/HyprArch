@@ -29,6 +29,7 @@ unrar \
 unzip \
 zip \
 fuse2 \
+flatpak \
 noctalia
 
 # APPS #
