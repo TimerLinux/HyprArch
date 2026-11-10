@@ -50,9 +50,8 @@ sudo systemctl enable ly@tty1.service
 chsh -s /usr/bin/fish
 sudo usermod -c "Arch Linux" $USER
 echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
-sudo systemctl enable --now btrfs-scrub@-.timer
 sudo cp ~/HyprArch/dotfiles/config/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
-sudo systemctl start reflector.service
+sudo systemctl enable --now btrfs-scrub@-.timer
 sudo systemctl enable --now paccache.timer
 sudo systemctl enable --now reflector.timer
 sudo systemctl start reflector.service
