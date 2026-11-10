@@ -30,6 +30,7 @@ unzip \
 zip \
 fuse2 \
 flatpak \
+reflector \
 noctalia
 
 # APPS #
