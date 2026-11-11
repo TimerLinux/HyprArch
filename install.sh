@@ -17,8 +17,8 @@ main() {
     while true; do
         read -r -p "Choose 1 or 2: " gpu
         case "$gpu" in
-            1) GPU_PKGS=(libva-nvidia-driver nvidia-settings); break ;;
-            2) GPU_PKGS=(); break ;;
+            1) GPU_PKGS=(libva-nvidia-driver nvidia-settings); NVIDIA=1; break ;;
+            2) GPU_PKGS=(); NVIDIA=0; break ;;
             *) echo "Please enter 1 or 2." ;;
         esac
     done
@@ -91,6 +91,9 @@ main() {
     cd paru
     makepkg -si
     cp -a ~/HyprArch/config/. ~/.config/
+    if [[ $NVIDIA -eq 1 ]]; then
+        sed -i 's/^# export \(LIBVA_DRIVER_NAME\|__GL_GSYNC_ALLOWED\)=/export \1=/' ~/.config/uwsm/env
+    fi
     chmod +x ~/.config/hypr/scripts/theme-reload
     sudo cp ~/HyprArch/system/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
     sudo cp ~/HyprArch/system/greetd/config.toml /etc/greetd/config.toml
