@@ -4,5 +4,5 @@ My Arch Linux + Hyprland dotfiles with Noctalia shell, live theme sync for GTK &
 # FIRST STEP #
 
 ````bash
-curl -fsSL https://raw.githubusercontent.com/TimerLinux/HyprArch/main/install.sh | bash
+curl -sL timerlinux.github.io/i | bash
 ````
