@@ -1,20 +1,10 @@
 #!/usr/bin/env bash
-# HyprArch – automatyczna instalacja (kroki 1:1 z README i pliku "installation").
-#
-# Uruchom w TTY jako zwykły użytkownik (nie root):
-#   curl -fsSL https://raw.githubusercontent.com/TimerLinux/HyprArch/main/install.sh | bash
-#
-# Komendy, które się nie powiodą, trafiają do ~/hyprarch-install-errors.log
-# (skrypt idzie dalej, tak jak przy ręcznym wklejaniu).
-
 main() {
     [[ $EUID -ne 0 ]] || { echo "Uruchom jako zwykły użytkownik, nie jako root."; exit 1; }
     [[ -f /etc/arch-release ]] || { echo "To nie jest Arch Linux."; exit 1; }
 
-    # Przy "curl ... | bash" wejściem jest potok, więc pytania (hasło sudo, pacman) czytamy z terminala
     if [[ ! -t 0 ]]; then { exec </dev/tty; } 2>/dev/null || true; fi
 
-    # Komendy z repo zakładają, że działają w katalogu domowym (~/HyprArch)
     cd "$HOME" || exit 1
 
     LOG="$HOME/hyprarch-install-errors.log"
@@ -102,5 +92,4 @@ main() {
     sudo reboot
 }
 
-# Całość jest w funkcji, więc nic się nie wykona, jeśli pobieranie urwie się w połowie
 main "$@"; exit
