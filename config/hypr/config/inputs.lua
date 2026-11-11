@@ -1,6 +1,6 @@
 hl.config({
     input = {
-        kb_layout     = "pl",
+        kb_layout     = "",
         accel_profile = "flat",
         follow_mouse  = 1,
 	    sensitivity   = 0,
