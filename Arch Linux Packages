@@ -31,7 +31,7 @@ fuse2 \
 flatpak \
 reflector \
 nano \
-ly \
+noctalia-greeter \
 noctalia
 
 # APPS #
@@ -51,7 +51,7 @@ chmod +x ~/.config/hypr/scripts/theme-reload
 sudo cp ~/HyprArch/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
 sudo cp ~/HyprArch/ly/config.ini /etc/ly/config.ini
 sudo systemctl disable getty@tty1.service
-sudo systemctl enable ly@tty1.service
+sudo systemctl enable greetd
 chsh -s /usr/bin/fish
 sudo usermod -c "Arch Linux" $USER
 sudo systemctl enable --now accounts-daemon
