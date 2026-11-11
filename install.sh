@@ -107,6 +107,14 @@ main() {
     cd yay-bin
     makepkg -si --noconfirm
     cp -a ~/HyprArch/config/. ~/.config/
+        KB=$(localectl status 2>/dev/null | sed -n 's/.*X11 Layout: *//p')
+    if [[ -z "$KB" ]]; then
+        KB=$(sed -n 's/^KEYMAP=//p' /etc/vconsole.conf 2>/dev/null | tr -d '"')
+        KB=${KB%%-*}; KB=${KB%%[0-9]*}
+        case "$KB" in uk) KB=gb ;; sv) KB=se ;; la) KB=latam ;; trq) KB=tr ;; esac
+    fi
+    [[ -n "$KB" ]] || KB=us
+    sed -i "s/kb_layout\( *\)= *\"[^\"]*\"/kb_layout\1= \"$KB\"/" ~/.config/hypr/config/inputs.lua
     if [[ $NVIDIA -eq 1 ]]; then
         sed -i 's/^# export \(LIBVA_DRIVER_NAME\|__GL_GSYNC_ALLOWED\)=/export \1=/' ~/.config/uwsm/env
     fi
