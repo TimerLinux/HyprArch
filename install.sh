@@ -137,18 +137,6 @@ main() {
     sudo systemctl enable --now reflector.timer
     echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
     xdg-mime default org.gnome.Nautilus.desktop inode/directory
-    if [[ -f /etc/kernel/cmdline ]]; then
-        for p in quiet fbcon=vc:2-6; do grep -qw -- "$p" /etc/kernel/cmdline || sudo sed -i "1 s|\$| $p|" /etc/kernel/cmdline; done
-    fi
-    sudo sed -i 's/^HOOKS=.*/HOOKS=(systemd autodetect microcode modconf kms keyboard sd-vconsole block sd-encrypt filesystems fsck)/' /etc/mkinitcpio.conf
-    if [[ $NVIDIA -eq 1 ]]; then
-        sudo sed -i '/^HOOKS=/s/ kms//' /etc/mkinitcpio.conf
-    fi
-    ROOTFS=$(findmnt -no FSTYPE /)
-    if [[ $ROOTFS == btrfs || $ROOTFS == xfs ]]; then
-        sudo sed -i '/^HOOKS=/s/ fsck//' /etc/mkinitcpio.conf
-    fi
-    sudo mkinitcpio -P
 }
 
 main "$@"; exit
