@@ -41,6 +41,7 @@ icon_size = 32
 item_spacing = 16
 launcher_custom_image = "/home/arch/.config/hypr/avatar.png"
 launcher_position = "start"
+pinned = [ "firefox", "steam" ]
 radius = 80
 show_dots = true
 
@@ -136,13 +137,13 @@ wallpaper_scheme = "m3-content"
 directory = "/home/arch/Obrazy/Wallpapers"
 
     [wallpaper.default]
-    path = "/home/arch/Obrazy/Wallpapers/doctor-doom-badass-3840x2160-27708.jpg"
+    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
 
     [wallpaper.last]
-    path = "/home/arch/Obrazy/Wallpapers/doctor-doom-badass-3840x2160-27708.jpg"
+    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/arch/Obrazy/Wallpapers/doctor-doom-badass-3840x2160-27708.jpg"
+    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
 
 [widget.clock]
 anchor = true
