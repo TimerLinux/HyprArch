@@ -20,10 +20,13 @@ main() {
     LOG="$HOME/hyprarch-install-errors.log"
     : > "$LOG"
     trap 'echo "[linia $LINENO] $BASH_COMMAND" >> "$LOG"' ERR
-
-    sudo pacman -S hyprland kitty nautilus firefox
+    
     sudo -v
     sudo pacman -S --needed --noconfirm \
+    hyprland \
+    kitty \
+    nautilus \
+    firefox \
     xdg-desktop-portal-hyprland \
     power-profiles-daemon \
     fastfetch \
