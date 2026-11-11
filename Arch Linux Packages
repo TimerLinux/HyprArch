@@ -49,6 +49,7 @@ git clone https://github.com/TimerLinux/HyprArch.git
 cp -a ~/HyprArch/dotfiles/config/. ~/.config/
 chmod +x ~/.config/hypr/scripts/theme-reload
 sudo cp ~/HyprArch/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
+sudo cp ~/HyprArch/ly/config.ini /etc/ly/config.ini
 sudo systemctl disable getty@tty1.service
 sudo systemctl enable ly@tty1.service
 chsh -s /usr/bin/fish
