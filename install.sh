@@ -33,6 +33,9 @@ main() {
     done
 
     sudo -v
+    while true; do sudo -n true; sleep 60; done 2>/dev/null &
+    SUDO_KEEPALIVE=$!
+    trap 'kill $SUDO_KEEPALIVE 2>/dev/null' EXIT
     sudo pacman -S --needed --noconfirm \
     base-devel \
     hyprland \
@@ -89,7 +92,7 @@ main() {
     git clone https://github.com/TimerLinux/HyprArch.git
     git clone https://aur.archlinux.org/yay-bin.git
     cd yay-bin
-    makepkg -si
+    makepkg -si --noconfirm
     cp -a ~/HyprArch/config/. ~/.config/
     if [[ $NVIDIA -eq 1 ]]; then
         sed -i 's/^# export \(LIBVA_DRIVER_NAME\|__GL_GSYNC_ALLOWED\)=/export \1=/' ~/.config/uwsm/env
