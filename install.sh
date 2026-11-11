@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 main() {
     [[ $EUID -ne 0 ]] || { echo "Uruchom jako zwykły użytkownik, nie jako root."; exit 1; }
     [[ -f /etc/arch-release ]] || { echo "To nie jest Arch Linux."; exit 1; }
