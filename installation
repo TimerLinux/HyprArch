@@ -37,6 +37,15 @@ baobab \
 loupe \
 gnome-calculator \
 ark \
+gvfs-mtp \
+exfatprogs \
+ntfs-3g \
+dosfstools \
+ffmpegthumbnailer \
+smartmontools \
+wl-clipboard \
+man-db \
+man-pages \
 vlc
 git clone https://github.com/TimerLinux/HyprArch.git
 cp -a ~/HyprArch/config/. ~/.config/
