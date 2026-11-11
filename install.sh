@@ -34,6 +34,7 @@ main() {
 
     sudo -v
     sudo pacman -S --needed --noconfirm \
+    base-devel \
     hyprland \
     kitty \
     nautilus \
@@ -85,6 +86,9 @@ main() {
     man-pages \
     bazaar \
     vlc
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si
     git clone https://github.com/TimerLinux/HyprArch.git
     cp -a ~/HyprArch/config/. ~/.config/
     chmod +x ~/.config/hypr/scripts/theme-reload
