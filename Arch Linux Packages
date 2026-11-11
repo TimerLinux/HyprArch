@@ -65,7 +65,6 @@ echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 mkdir -p ~/Obrazy/Wallpapers
 mkdir -p ~/Obrazy/Screenshots
-sudo reboot
 
 # MANUAL STEPS #
 # /etc/kernel/cmdline
@@ -74,3 +73,4 @@ quiet fbcon=vc:2-6
 HOOKS=(systemd autodetect microcode modconf keyboard block filesystems)
 # END #
 sudo mkinitcpio -P
+sudo reboot
