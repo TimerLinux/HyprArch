@@ -39,7 +39,7 @@ cross_axis_padding = 0
 enabled = true
 icon_size = 32
 item_spacing = 16
-launcher_custom_image = "/home/arch/.config/hypr/avatar.png"
+launcher_custom_image = "~/.config/hypr/avatar.png"
 launcher_position = "start"
 pinned = [ "firefox", "steam" ]
 radius = 80
@@ -90,7 +90,7 @@ widget_order = [ "lockscreen-login-box@DP-3" ]
         show_weather = true
 
 [shell]
-avatar_path = "/home/arch/.config/hypr/avatar.png"
+avatar_path = "~/.config/hypr/avatar.png"
 launch_apps_as_systemd_services = true
 polkit_agent = true
 settings_window_translucent = true
@@ -132,18 +132,6 @@ wallpaper_scheme = "m3-content"
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kitty", "qt" ]
     enable_community_templates = false
-
-[wallpaper]
-directory = "/home/arch/Obrazy/Wallpapers"
-
-    [wallpaper.default]
-    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
-
-    [wallpaper.last]
-    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
-
-    [wallpaper.monitors.DP-3]
-    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
 
 [widget.clock]
 anchor = true
