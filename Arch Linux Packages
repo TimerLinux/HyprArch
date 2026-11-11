@@ -1,5 +1,5 @@
-# CORE #
-sudo pacman -S \
+sudo -v
+sudo pacman -S --needed --noconfirm \
 xdg-desktop-portal-hyprland \
 power-profiles-daemon \
 fastfetch \
@@ -30,10 +30,7 @@ reflector \
 nano \
 noctalia-greeter \
 accountsservice \
-noctalia
-
-# APPS #
-sudo pacman -S \
+noctalia \
 gnome-text-editor  \
 gnome-disk-utility \
 baobab \
@@ -41,8 +38,6 @@ loupe \
 gnome-calculator \
 ark \
 vlc
-
-# CONFIG #
 git clone https://github.com/TimerLinux/HyprArch.git
 cp -a ~/HyprArch/config/. ~/.config/
 chmod +x ~/.config/hypr/scripts/theme-reload
@@ -52,7 +47,7 @@ sudo mkdir -p /var/lib/noctalia-greeter
 sudo cp ~/HyprArch/system/noctalia-greeter/greeter.toml /var/lib/noctalia-greeter/greeter.toml
 sudo systemctl disable getty@tty1.service
 sudo systemctl enable greetd
-chsh -s /usr/bin/fish
+sudo chsh -s /usr/bin/fish $USER
 sudo usermod -c "Arch Linux" $USER
 sudo systemctl enable --now accounts-daemon
 sudo systemctl enable --now btrfs-scrub@-.timer
@@ -63,8 +58,6 @@ echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 mkdir -p ~/Obrazy/Wallpapers
 mkdir -p ~/Obrazy/Screenshots
-
-# KERNEL #
 for p in quiet fbcon=vc:2-6; do grep -qw -- "$p" /etc/kernel/cmdline || sudo sed -i "1 s|\$| $p|" /etc/kernel/cmdline; done
 sudo sed -i 's/^HOOKS=.*/HOOKS=(systemd autodetect microcode modconf keyboard block filesystems)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -P
