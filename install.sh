@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 main() {
-    [[ $EUID -ne 0 ]] || { echo "Uruchom jako zwykły użytkownik, nie jako root."; exit 1; }
-    [[ -f /etc/arch-release ]] || { echo "To nie jest Arch Linux."; exit 1; }
+    [[ $EUID -ne 0 ]] || { echo "Run this as a regular user, not as root."; exit 1; }
+    [[ -f /etc/arch-release ]] || { echo "This is not Arch Linux."; exit 1; }
 
     if [[ ! -t 0 ]]; then { exec </dev/tty; } 2>/dev/null || true; fi
 
@@ -9,8 +9,20 @@ main() {
 
     LOG="$HOME/hyprarch-install-errors.log"
     : > "$LOG"
-    trap 'echo "[linia $LINENO] $BASH_COMMAND" >> "$LOG"' ERR
+    trap 'echo "[line $LINENO] $BASH_COMMAND" >> "$LOG"' ERR
     
+    echo "Which graphics card do you have?"
+    echo "  1) NVIDIA"
+    echo "  2) AMD"
+    while true; do
+        read -r -p "Choose 1 or 2: " gpu
+        case "$gpu" in
+            1) GPU_PKGS=(libva-nvidia-driver nvidia-settings); break ;;
+            2) GPU_PKGS=(); break ;;
+            *) echo "Please enter 1 or 2." ;;
+        esac
+    done
+
     sudo -v
     sudo pacman -S --needed --noconfirm \
     hyprland \
@@ -35,8 +47,7 @@ main() {
     icoextract \
     git \
     oxygen-cursors \
-    libva-nvidia-driver \
-    nvidia-settings \
+    "${GPU_PKGS[@]}" \
     7zip \
     unrar \
     unzip \
