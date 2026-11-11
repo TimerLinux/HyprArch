@@ -108,7 +108,6 @@ main() {
     fi
     sudo systemctl enable --now paccache.timer
     sudo systemctl enable --now reflector.timer
-    sudo systemctl start reflector.service
     echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
     xdg-mime default org.gnome.Nautilus.desktop inode/directory
     sudo reboot
