@@ -65,12 +65,9 @@ mkdir -p ~/Obrazy/Screenshots
 sudo reboot
 
 # MANUAL STEPS #
-
 # /etc/kernel/cmdline
 quiet fbcon=vc:2-6
-
 # /etc/mkinitcpio.conf
 HOOKS=(systemd autodetect microcode modconf keyboard block filesystems)
-
 # END #
 sudo mkinitcpio -P
