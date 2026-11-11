@@ -1,0 +1,162 @@
+[audio]
+sound_volume = 0.99999997764825821
+
+[bar.default]
+background_opacity = 0.4999999888241291
+end = [ "tray", "volume", "session" ]
+margin_ends = 720
+padding = 16
+radius = 80
+start = [ "cpu", "sysmon", "ram", "workspaces" ]
+thickness = 32
+widget_spacing = 16
+
+[control_center]
+circular_avatar = false
+show_avatar_border = false
+show_shortcut_labels = true
+sidebar = "full"
+sidebar_section = "full"
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
+
+[desktop_widgets]
+enabled = false
+
+[dock]
+background_opacity = 0.4999999888241291
+cross_axis_padding = 0
+enabled = true
+icon_size = 32
+item_spacing = 16
+launcher_custom_image = "/home/arch/.config/hypr/avatar.png"
+launcher_position = "start"
+pinned = [ "firefox", "steam" ]
+radius = 80
+show_dots = true
+
+[hooks]
+colors_changed = "./.config/hypr/scripts/theme-reload"
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-3" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-3"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[shell]
+avatar_path = "/home/arch/.config/hypr/avatar.png"
+launch_apps_as_systemd_services = true
+polkit_agent = true
+settings_window_translucent = true
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher]
+    app_grid = true
+    default_view = "all"
+    sort_by_usage = false
+    track_usage = false
+
+    [shell.panel]
+    launcher_placement = "attached"
+    polkit_placement = "attached"
+
+    [shell.screen_corners]
+    enabled = true
+
+    [shell.screenshot]
+    annotate = true
+    directory = "/home/arch/Obrazy/Screenshots"
+    save_to_file = false
+
+    [shell.session]
+    show_shortcuts = false
+
+    [shell.shadow]
+    alpha = 0.99999997764825821
+
+[theme]
+builtin = "Noctalia"
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kitty", "qt" ]
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/home/arch/Obrazy/Wallpapers"
+
+    [wallpaper.default]
+    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
+
+    [wallpaper.last]
+    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/arch/Obrazy/Wallpapers/windows-insider-4000x4000-27656.png"
+
+[widget.clock]
+anchor = true
+
+[widget.cpu]
+visualization = "none"
+
+[widget.ram]
+visualization = "none"
+
+[widget.session]
+color = "primary"
+
+[widget.sysmon]
+stat = "cpu_temp"
+visualization = "none"
