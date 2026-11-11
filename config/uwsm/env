@@ -1,14 +1,12 @@
 export QT_QPA_PLATFORMTHEME="qt6ct"
 export QT_QPA_PLATFORM="wayland;xcb"
-
-export GBM_BACKEND=nvidia-drm
-export __GLX_VENDOR_LIBRARY_NAME=nvidia
-export LIBVA_DRIVER_NAME=nvidia
-export __GL_GSYNC_ALLOWED=1
-
-export ELECTRON_OZONE_PLATFORM_HINT=auto
-
 export XCURSOR_THEME="Oxygen_White"
 export XCURSOR_SIZE=24
-
 export GDK_WAYLAND_DISABLE=ext_background_effect_manager_v1
+
+# UNCOMMENT FOR NVIDIA #
+# export GBM_BACKEND=nvidia-drm
+# export __GLX_VENDOR_LIBRARY_NAME=nvidia
+# export LIBVA_DRIVER_NAME=nvidia
+# export __GL_GSYNC_ALLOWED=1
+# export ELECTRON_OZONE_PLATFORM_HINT=auto
