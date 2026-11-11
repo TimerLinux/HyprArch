@@ -107,7 +107,8 @@ main() {
     cd yay-bin
     makepkg -si --noconfirm
     cp -a ~/HyprArch/config/. ~/.config/
-        KB=$(localectl status 2>/dev/null | sed -n 's/.*X11 Layout: *//p')
+    KB=$(localectl status 2>/dev/null | sed -n 's/.*X11 Layout: *//p')
+    [[ "$KB" == "(unset)" ]] && KB=""
     if [[ -z "$KB" ]]; then
         KB=$(sed -n 's/^KEYMAP=//p' /etc/vconsole.conf 2>/dev/null | tr -d '"')
         KB=${KB%%-*}; KB=${KB%%[0-9]*}
