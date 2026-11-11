@@ -94,6 +94,9 @@ launch_apps_as_systemd_services = true
 polkit_agent = true
 settings_window_translucent = true
 
+    [shell.greeter_sync]
+    auto_sync = true
+
     [shell.launcher]
     app_grid = true
     default_view = "all"
@@ -133,13 +136,13 @@ wallpaper_scheme = "m3-content"
 directory = "/home/arch/Obrazy/Wallpapers"
 
     [wallpaper.default]
-    path = "/home/arch/Obrazy/Wallpapers/wallhaven-6l7dm7.png"
+    path = "/home/arch/Obrazy/Wallpapers/doctor-doom-badass-3840x2160-27708.jpg"
 
     [wallpaper.last]
-    path = "/home/arch/Obrazy/Wallpapers/wallhaven-6l7dm7.png"
+    path = "/home/arch/Obrazy/Wallpapers/doctor-doom-badass-3840x2160-27708.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/arch/Obrazy/Wallpapers/wallhaven-6l7dm7.png"
+    path = "/home/arch/Obrazy/Wallpapers/doctor-doom-badass-3840x2160-27708.jpg"
 
 [widget.clock]
 anchor = true
