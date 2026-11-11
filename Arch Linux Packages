@@ -45,19 +45,19 @@ vlc
 
 # CONFIG #
 git clone https://github.com/TimerLinux/HyprArch.git
+cp -a ~/HyprArch/dotfiles/config/. ~/.config/
+chmod +x ~/.config/hypr/scripts/theme-reload
+sudo cp ~/HyprArch/dotfiles/config/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
 sudo systemctl disable getty@tty1.service
 sudo systemctl enable ly@tty1.service
 chsh -s /usr/bin/fish
 sudo usermod -c "Arch Linux" $USER
-echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
-sudo cp ~/HyprArch/dotfiles/config/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
 sudo systemctl enable --now btrfs-scrub@-.timer
 sudo systemctl enable --now paccache.timer
 sudo systemctl enable --now reflector.timer
 sudo systemctl start reflector.service
+echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
-cp -a ~/HyprArch/dotfiles/config/. ~/.config/
-chmod +x ~/.config/hypr/scripts/theme-reload
 mkdir -p ~/Obrazy/Wallpapers
 mkdir -p ~/Obrazy/Screenshots
 sudo reboot
