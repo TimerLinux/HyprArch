@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
-# theme-reload: przeładowuje kolory Noctalii w otwartych aplikacjach.
-# Uruchamiany przez hook Noctalii "Gdy zmieniły się kolory".
-#   GTK4 / libadwaita - na żywo
-#   Qt5 / Qt6         - na żywo (z ok. 2-3 s opóźnieniem po stronie qt6ct),
-#                       z poprawką wyszarzania nieaktywnych opcji
-#   GTK3              - nowe kolory dopiero po ponownym uruchomieniu aplikacji
 
-# ---------- 1. Import własnych reguł (Noctalia nadpisuje gtk.css) ----------
-# Przed przeładowaniem, żeby aplikacje od razu wczytały też custom.css
 css="$HOME/.config/gtk-4.0/gtk.css"
 grep -q "custom.css" "$css" 2>/dev/null || echo "@import url('custom.css');" >> "$css"
 
-# ---------- 2. GTK4 / libadwaita (Nautilus, Text Editor, Bazaar...) ----------
-# Przeładowują style przy zmianie trybu jasny/ciemny, więc przełączamy tam i z powrotem
 key="org.gnome.desktop.interface color-scheme"
 current=$(gsettings get $key)
 if [ "$current" = "'prefer-dark'" ]; then
@@ -23,13 +13,8 @@ fi
 gsettings set $key "$other"
 gsettings set $key "$current"
 
-# ---------- 3. Portal GTK (okna wyboru plików) ----------
 systemctl --user restart xdg-desktop-portal-gtk
 
-# ---------- 4. Qt: wyszarzanie nieaktywnych opcji ----------
-# Noctalia zapisuje disabled_colors identyczne z active_colors, przez co nieaktywne
-# opcje w aplikacjach Qt nie są wyszarzone (styl Fusion rysuje je wtedy "wytłoczone").
-# Przyciemniamy tekst nieaktywnych elementów i chowamy efekt wytłoczenia.
 fix_disabled() {
     local f="$HOME/.config/$1/colors/noctalia.conf"
     [ -f "$f" ] || return 0
@@ -40,13 +25,13 @@ fix_disabled() {
         }
         /^active_colors=/ {
             n = split($2, c, /, */)
-            win = c[11]                      # kolor tła okna
-            dim = mix(c[1], win, 0.55)       # tekst zmieszany z tłem = wyszarzony
+            win = c[11]
+            dim = mix(c[1], win, 0.55)
             dis = "disabled_colors="
             for (i = 1; i <= n; i++) {
                 v = c[i]
-                if (i == 1 || i == 7 || i == 9 || i == 21) v = dim   # windowText, text, buttonText, placeholderText
-                if (i == 3) v = win                                  # light: bez "wytłoczenia"
+                if (i == 1 || i == 7 || i == 9 || i == 21) v = dim
+                if (i == 3) v = win
                 dis = dis v (i < n ? ", " : "")
             }
             print; next
@@ -59,23 +44,17 @@ fix_disabled() {
 fix_disabled qt6ct
 fix_disabled qt5ct
 
-# ---------- 5. Qt5 / Qt6 (qt5ct / qt6ct) ----------
-# qt*ct obserwują KATALOG z konfiguracją, a nie plik ze schematem kolorów,
-# więc na chwilę przełączamy schemat na inny i wracamy do poprzedniego,
-# podmieniając plik (tymczasowy + mv), tak jak robi to samo okno qt6ct.
 reload_ct() {
-    local name="$1"                                   # qt5ct albo qt6ct
+    local name="$1"
     local conf="$HOME/.config/$name/$name.conf"
     [ -f "$conf" ] || return 0
 
     local orig
     orig=$(grep -m1 '^color_scheme_path=' "$conf") || return 0
 
-    # mktemp tworzy pliki z prawami 600, a qt*ct.conf ma zwykle 644
     local perms
     perms=$(stat -c %a "$conf")
 
-    # Tymczasowy schemat: dowolny systemowy, inny niż obecny
     local temp_scheme
     temp_scheme=$(ls /usr/share/"$name"/colors/*.conf 2>/dev/null \
                   | grep -vxF "${orig#color_scheme_path=}" | head -n1)
