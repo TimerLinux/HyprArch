@@ -63,3 +63,7 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 mkdir -p ~/Obrazy/Wallpapers
 mkdir -p ~/Obrazy/Screenshots
 sudo reboot
+
+# MANUAL STEPS #
+quiet fbcon=vc:2-6
+HOOKS=(systemd autodetect microcode modconf block filesystems)
