@@ -70,7 +70,6 @@ sudo reboot
 quiet fbcon=vc:2-6
 
 # /etc/mkinitcpio.conf
-HOOKS=(systemd autodetect microcode modconf block filesystems)
-
+HOOKS=(systemd autodetect microcode modconf keyboard block filesystems)
 # END #
 sudo mkinitcpio -P
