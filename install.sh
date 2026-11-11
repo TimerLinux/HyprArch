@@ -144,6 +144,10 @@ main() {
     if [[ $NVIDIA -eq 1 ]]; then
         sudo sed -i '/^HOOKS=/s/ kms//' /etc/mkinitcpio.conf
     fi
+    ROOTFS=$(findmnt -no FSTYPE /)
+    if [[ $ROOTFS == btrfs || $ROOTFS == xfs ]]; then
+        sudo sed -i '/^HOOKS=/s/ fsck//' /etc/mkinitcpio.conf
+    fi
     sudo mkinitcpio -P
 }
 
