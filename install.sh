@@ -23,6 +23,15 @@ main() {
         esac
     done
 
+    while true; do
+        read -r -p "Is your root filesystem Btrfs? (y/n): " fs
+        case "$fs" in
+            y|Y) BTRFS=1; break ;;
+            n|N) BTRFS=0; break ;;
+            *) echo "Please enter y or n." ;;
+        esac
+    done
+
     sudo -v
     sudo pacman -S --needed --noconfirm \
     hyprland \
@@ -89,7 +98,9 @@ main() {
     sudo usermod -c "Arch Linux" $USER
     sudo noctalia-greeter passwordless-sync enable $USER
     sudo systemctl enable --now accounts-daemon
-    sudo systemctl enable --now btrfs-scrub@-.timer
+    if [[ $BTRFS -eq 1 ]]; then
+        sudo systemctl enable --now btrfs-scrub@-.timer
+    fi
     sudo systemctl enable --now paccache.timer
     sudo systemctl enable --now reflector.timer
     sudo systemctl start reflector.service
