@@ -145,7 +145,6 @@ main() {
         sudo sed -i '/^HOOKS=/s/ kms//' /etc/mkinitcpio.conf
     fi
     sudo mkinitcpio -P
-    sudo reboot
 }
 
 main "$@"; exit
