@@ -1,6 +1,3 @@
-# FIRST STEP #
-sudo pacman -S hyprland kitty nautilus firefox
-
 # CORE #
 sudo pacman -S \
 xdg-desktop-portal-hyprland \
