@@ -50,6 +50,7 @@ cp -a ~/HyprArch/dotfiles/config/. ~/.config/
 chmod +x ~/.config/hypr/scripts/theme-reload
 sudo cp ~/HyprArch/dotfiles/config/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
 sudo cp ~/HyprArch/dotfiles/config/greetd/config.toml /etc/greetd/config.toml
+sudo cp ~/HyprArch/dotfiles/config/nooctalia-greeter/greeter.toml /var/lib/noctalia-greeter/greeter.toml
 sudo systemctl disable getty@tty1.service
 sudo systemctl enable greetd
 chsh -s /usr/bin/fish
