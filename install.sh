@@ -90,7 +90,6 @@ main() {
     git clone https://aur.archlinux.org/paru.git
     cd paru
     makepkg -si
-    git clone https://github.com/TimerLinux/HyprArch.git
     cp -a ~/HyprArch/config/. ~/.config/
     chmod +x ~/.config/hypr/scripts/theme-reload
     sudo cp ~/HyprArch/system/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
