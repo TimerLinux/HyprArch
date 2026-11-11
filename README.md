@@ -3,6 +3,6 @@ My Arch Linux + Hyprland dotfiles with Noctalia shell, live theme sync for GTK &
 
 # FIRST STEP #
 
-''''bash
+````bash
 curl -fsSL https://raw.githubusercontent.com/TimerLinux/HyprArch/main/install.sh | bash
-''''
+````
