@@ -15,7 +15,6 @@ qt5ct \
 qt6-wayland \
 qt5-wayland \
 pacman-contrib \
-ly \
 uwsm \
 speech-dispatcher \
 python-pillow \
@@ -32,6 +31,7 @@ fuse2 \
 flatpak \
 reflector \
 nano \
+noctalia-greeter \
 noctalia
 
 # APPS #
@@ -51,7 +51,7 @@ chmod +x ~/.config/hypr/scripts/theme-reload
 sudo cp ~/HyprArch/dotfiles/config/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
 sudo cp ~/HyprArch/dotfiles/config/greetd/config.toml /etc/greetd/config.toml
 sudo systemctl disable getty@tty1.service
-sudo systemctl enable ly@tty1.service
+sudo systemctl enable greetd
 chsh -s /usr/bin/fish
 sudo usermod -c "Arch Linux" $USER
 sudo systemctl enable --now btrfs-scrub@-.timer
