@@ -53,6 +53,7 @@ sudo cp ~/HyprArch/dotfiles/config/greetd/config.toml /etc/greetd/config.toml
 sudo cp ~/HyprArch/dotfiles/config/noctalia-greeter/greeter.toml /var/lib/noctalia-greeter/greeter.toml
 sudo systemctl disable getty@tty1.service
 sudo systemctl enable greetd
+busctl call org.freedesktop.Accounts /org/freedesktop/Accounts/User(id -u) org.freedesktop.Accounts.User SetIconFile s $HOME/.config/hypr/avatar.png
 chsh -s /usr/bin/fish
 sudo usermod -c "Arch Linux" $USER
 sudo systemctl enable --now accounts-daemon
