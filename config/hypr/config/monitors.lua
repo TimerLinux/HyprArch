@@ -1,6 +1,6 @@
 hl.monitor({
     output    = "",
-    mode      = "",
+    mode      = "highrr",
     position  = "0x0",
     scale     = "1",
 })
