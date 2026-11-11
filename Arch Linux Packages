@@ -66,4 +66,4 @@ sudo reboot
 
 # MANUAL STEPS #
 quiet fbcon=vc:2-6
-HOOKS=(systemd autodetect microcode modconf block filesystems)
+HOOKS=(systemd autodetect microcode modconf keyboard block filesystems)
