@@ -113,7 +113,6 @@ settings_window_translucent = true
 
     [shell.screenshot]
     annotate = true
-    directory = "/home/arch/Obrazy/Screenshots"
     save_to_file = false
 
     [shell.session]
