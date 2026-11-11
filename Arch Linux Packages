@@ -55,6 +55,7 @@ sudo systemctl disable getty@tty1.service
 sudo systemctl enable greetd
 chsh -s /usr/bin/fish
 sudo usermod -c "Arch Linux" $USER
+sudo systemctl enable --now accounts-daemon
 sudo systemctl enable --now btrfs-scrub@-.timer
 sudo systemctl enable --now paccache.timer
 sudo systemctl enable --now reflector.timer
