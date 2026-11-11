@@ -32,6 +32,7 @@ flatpak \
 reflector \
 nano \
 noctalia-greeter \
+accountsservice \
 noctalia
 
 # APPS #
