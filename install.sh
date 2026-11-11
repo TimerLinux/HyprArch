@@ -86,6 +86,7 @@ main() {
     man-pages \
     bazaar \
     vlc
+    git clone https://github.com/TimerLinux/HyprArch.git
     git clone https://aur.archlinux.org/paru.git
     cd paru
     makepkg -si
