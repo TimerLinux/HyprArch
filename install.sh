@@ -10,7 +10,7 @@ main() {
     LOG="$HOME/hyprarch-install-errors.log"
     : > "$LOG"
     trap 'echo "[line $LINENO] $BASH_COMMAND" >> "$LOG"' ERR
-    
+
     echo "Which graphics card do you have?"
     echo "  1) NVIDIA"
     echo "  2) AMD"
@@ -31,6 +31,19 @@ main() {
             *) echo "Please enter y or n." ;;
         esac
     done
+
+    if [[ $NVIDIA -eq 1 ]] && ! pacman -Qq | grep -qE '^nvidia(-open)?(-beta)?(-dkms|-lts)?$'; then
+        KERNELS=()
+        for k in linux linux-lts linux-zen linux-hardened; do
+            if pacman -Qq "$k" &>/dev/null; then KERNELS+=("$k"); fi
+        done
+        if [[ "${KERNELS[*]}" == "linux" ]]; then
+            GPU_PKGS+=(nvidia-open)
+        else
+            GPU_PKGS+=(nvidia-open-dkms)
+            for k in "${KERNELS[@]}"; do GPU_PKGS+=("$k-headers"); done
+        fi
+    fi
 
     sudo -v
     while true; do sudo -n true; sleep 60; done 2>/dev/null &
@@ -115,8 +128,13 @@ main() {
     sudo systemctl enable --now reflector.timer
     echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
     xdg-mime default org.gnome.Nautilus.desktop inode/directory
-    for p in quiet fbcon=vc:2-6; do grep -qw -- "$p" /etc/kernel/cmdline || sudo sed -i "1 s|\$| $p|" /etc/kernel/cmdline; done
+    if [[ -f /etc/kernel/cmdline ]]; then
+        for p in quiet fbcon=vc:2-6; do grep -qw -- "$p" /etc/kernel/cmdline || sudo sed -i "1 s|\$| $p|" /etc/kernel/cmdline; done
+    fi
     sudo sed -i 's/^HOOKS=.*/HOOKS=(systemd autodetect microcode modconf kms keyboard sd-vconsole block sd-encrypt filesystems fsck)/' /etc/mkinitcpio.conf
+    if [[ $NVIDIA -eq 1 ]]; then
+        sudo sed -i '/^HOOKS=/s/ kms//' /etc/mkinitcpio.conf
+    fi
     sudo mkinitcpio -P
     sudo reboot
 }
