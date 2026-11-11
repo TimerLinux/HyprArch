@@ -46,7 +46,7 @@ smartmontools \
 wl-clipboard \
 man-db \
 man-pages \
-baazar \
+bazaar \
 vlc
 git clone https://github.com/TimerLinux/HyprArch.git
 cp -a ~/HyprArch/config/. ~/.config/
