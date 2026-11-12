@@ -58,8 +58,8 @@ main() {
     gnome-software \
     vlc
     git clone https://github.com/TimerLinux/HyprArch.git
-    git clone https://aur.archlinux.org/paru.git
-    cd paru
+    git clone https://aur.archlinux.org/yay-bin.git
+    cd yay-bin
     makepkg -si
     cp -a ~/HyprArch/config/. ~/.config/
     chmod +x ~/.config/hypr/scripts/theme-reload
