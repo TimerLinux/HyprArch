@@ -92,7 +92,7 @@ main() {
     echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
     xdg-mime default org.gnome.Nautilus.desktop inode/directory
     for p in quiet fbcon=vc:2-6; do grep -qw -- "$p" /etc/kernel/cmdline || sudo sed -i "1 s|\$| $p|" /etc/kernel/cmdline; done
-    sudo sed -i 's/^HOOKS=.*/HOOKS=(systemd autodetect microcode modconf keyboard sd-vconsole block sd-encrypt filesystems)/' /etc/mkinitcpio.conf
+    sudo sed -i 's/^HOOKS=.*/HOOKS=(systemd autodetect microcode modconf block filesystems)/' /etc/mkinitcpio.conf
     sudo mkinitcpio -P
 }
 
