@@ -11,40 +11,6 @@ main() {
     : > "$LOG"
     trap 'echo "[line $LINENO] $BASH_COMMAND" >> "$LOG"' ERR
 
-    echo "Which graphics card do you have?"
-    echo "  1) NVIDIA"
-    echo "  2) AMD"
-    while true; do
-        read -r -p "Choose 1 or 2: " gpu
-        case "$gpu" in
-            1) GPU_PKGS=(libva-nvidia-driver nvidia-settings); NVIDIA=1; break ;;
-            2) GPU_PKGS=(); NVIDIA=0; break ;;
-            *) echo "Please enter 1 or 2." ;;
-        esac
-    done
-
-    while true; do
-        read -r -p "Is your root filesystem Btrfs? (y/n): " fs
-        case "$fs" in
-            y|Y) BTRFS=1; break ;;
-            n|N) BTRFS=0; break ;;
-            *) echo "Please enter y or n." ;;
-        esac
-    done
-
-    if [[ $NVIDIA -eq 1 ]] && ! pacman -Qq | grep -qE '^nvidia(-open)?(-beta)?(-dkms|-lts)?$'; then
-        KERNELS=()
-        for k in linux linux-lts linux-zen linux-hardened; do
-            if pacman -Qq "$k" &>/dev/null; then KERNELS+=("$k"); fi
-        done
-        if [[ "${KERNELS[*]}" == "linux" ]]; then
-            GPU_PKGS+=(nvidia-open)
-        else
-            GPU_PKGS+=(nvidia-open-dkms)
-            for k in "${KERNELS[@]}"; do GPU_PKGS+=("$k-headers"); done
-        fi
-    fi
-
     sudo -v
     while true; do sudo -n true; sleep 60; done 2>/dev/null &
     SUDO_KEEPALIVE=$!
@@ -73,7 +39,9 @@ main() {
     icoextract \
     git \
     oxygen-cursors \
-    "${GPU_PKGS[@]}" \
+    nvidia-open \
+    libva-nvidia-driver \
+    nvidia-settings \
     7zip \
     unrar \
     unzip \
@@ -107,18 +75,6 @@ main() {
     cd yay-bin
     makepkg -si --noconfirm
     cp -a ~/HyprArch/config/. ~/.config/
-    KB=$(localectl status 2>/dev/null | sed -n 's/.*X11 Layout: *//p')
-    [[ "$KB" == "(unset)" ]] && KB=""
-    if [[ -z "$KB" ]]; then
-        KB=$(sed -n 's/^KEYMAP=//p' /etc/vconsole.conf 2>/dev/null | tr -d '"')
-        KB=${KB%%-*}; KB=${KB%%[0-9]*}
-        case "$KB" in uk) KB=gb ;; sv) KB=se ;; la) KB=latam ;; trq) KB=tr ;; esac
-    fi
-    [[ -n "$KB" ]] || KB=us
-    sed -i "s/kb_layout\( *\)= *\"[^\"]*\"/kb_layout\1= \"$KB\"/" ~/.config/hypr/config/inputs.lua
-    if [[ $NVIDIA -eq 1 ]]; then
-        sed -i 's/^# export \(LIBVA_DRIVER_NAME\|__GL_GSYNC_ALLOWED\)=/export \1=/' ~/.config/uwsm/env
-    fi
     chmod +x ~/.config/hypr/scripts/theme-reload
     sudo cp ~/HyprArch/system/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
     sudo cp ~/HyprArch/system/greetd/config.toml /etc/greetd/config.toml
@@ -130,13 +86,14 @@ main() {
     sudo usermod -c "Arch Linux" $USER
     sudo noctalia-greeter passwordless-sync enable $USER
     sudo systemctl enable --now accounts-daemon
-    if [[ $BTRFS -eq 1 ]]; then
-        sudo systemctl enable --now btrfs-scrub@-.timer
-    fi
+    sudo systemctl enable --now btrfs-scrub@-.timer
     sudo systemctl enable --now paccache.timer
     sudo systemctl enable --now reflector.timer
     echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
     xdg-mime default org.gnome.Nautilus.desktop inode/directory
+    for p in quiet fbcon=vc:2-6; do grep -qw -- "$p" /etc/kernel/cmdline || sudo sed -i "1 s|\$| $p|" /etc/kernel/cmdline; done
+    sudo sed -i 's/^HOOKS=.*/HOOKS=(systemd autodetect microcode modconf keyboard sd-vconsole block sd-encrypt filesystems)/' /etc/mkinitcpio.conf
+    sudo mkinitcpio -P
 }
 
 main "$@"; exit
