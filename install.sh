@@ -45,7 +45,7 @@ main() {
     baobab \
     loupe \
     gnome-calculator \
-    ark \
+    breeze-icons \
     gvfs-mtp \
     exfatprogs \
     ntfs-3g \
