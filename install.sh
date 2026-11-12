@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 main() {
-    [[ $EUID -ne 0 ]] || { echo "Run this as a regular user, not as root."; exit 1; }
-    [[ -f /etc/arch-release ]] || { echo "This is not Arch Linux."; exit 1; }
-
-    if [[ ! -t 0 ]]; then { exec </dev/tty; } 2>/dev/null || true; fi
-
     cd "$HOME" || exit 1
 
     sudo pacman -S --needed --noconfirm \
