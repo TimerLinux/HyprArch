@@ -7,14 +7,6 @@ main() {
 
     cd "$HOME" || exit 1
 
-    LOG="$HOME/hyprarch-install-errors.log"
-    : > "$LOG"
-    trap 'echo "[line $LINENO] $BASH_COMMAND" >> "$LOG"' ERR
-
-    sudo -v
-    while true; do sudo -n true; sleep 60; done 2>/dev/null &
-    SUDO_KEEPALIVE=$!
-    trap 'kill $SUDO_KEEPALIVE 2>/dev/null' EXIT
     sudo pacman -S --needed --noconfirm \
     base-devel \
     hyprland \
