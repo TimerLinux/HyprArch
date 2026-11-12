@@ -1,3 +1,6 @@
 [cursor]
 theme = "Oxygen_White"
 size = 24
+
+[keyboard]
+numlock = true
