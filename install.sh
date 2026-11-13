@@ -58,7 +58,7 @@ main() {
     gnome-software \
     vlc
     git clone https://github.com/TimerLinux/HyprArch.git
-    git clone https://aur.archlinux.org/yay-bin.git
+    git clone https://aur.archlinux.org/paru-bin.git
     cd yay-bin
     makepkg -si --noconfirm
     cp -a ~/HyprArch/config/. ~/.config/
