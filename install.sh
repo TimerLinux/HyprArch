@@ -7,7 +7,6 @@ main() {
     hyprland \
     kitty \
     nautilus \
-    firefox \
     xdg-desktop-portal-hyprland \
     power-profiles-daemon \
     fastfetch \
