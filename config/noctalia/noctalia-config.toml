@@ -41,7 +41,6 @@ icon_size = 32
 item_spacing = 16
 launcher_custom_image = "~/.config/hypr/avatar.png"
 launcher_position = "start"
-pinned = [ "firefox" ]
 radius = 80
 show_dots = true
 
