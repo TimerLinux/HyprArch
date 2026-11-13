@@ -54,7 +54,6 @@ main() {
     wl-clipboard \
     man-db \
     man-pages \
-    gnome-software \
     vlc
     git clone https://github.com/TimerLinux/HyprArch.git
     git clone https://aur.archlinux.org/paru-bin.git
