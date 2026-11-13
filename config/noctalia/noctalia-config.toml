@@ -12,7 +12,6 @@ thickness = 32
 widget_spacing = 16
 
 [control_center]
-circular_avatar = false
 show_avatar_border = false
 show_shortcut_labels = true
 sidebar = "full"
