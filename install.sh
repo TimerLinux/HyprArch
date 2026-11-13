@@ -59,7 +59,7 @@ main() {
     vlc
     git clone https://github.com/TimerLinux/HyprArch.git
     git clone https://aur.archlinux.org/paru-bin.git
-    cd yay-bin
+    cd paru-bin
     makepkg -si --noconfirm
     cp -a ~/HyprArch/config/. ~/.config/
     chmod +x ~/.config/hypr/scripts/theme-reload
