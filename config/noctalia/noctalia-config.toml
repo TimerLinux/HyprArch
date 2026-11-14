@@ -7,7 +7,6 @@ end = [ "tray", "volume", "session" ]
 margin_ends = 720
 padding = 16
 radius = 80
-shadow = false
 start = [ "cpu", "sysmon", "ram", "workspaces" ]
 thickness = 32
 widget_spacing = 16
@@ -43,7 +42,6 @@ launcher_custom_image = "~/.config/hypr/avatar.png"
 launcher_position = "start"
 pinned = [ "zen", "steam" ]
 radius = 80
-shadow = false
 show_dots = true
 
 [hooks]
