@@ -56,8 +56,8 @@ main() {
     man-pages \
     vlc
     git clone https://github.com/TimerLinux/HyprArch.git
-    git clone https://aur.archlinux.org/paru-bin.git
-    cd paru-bin
+    https://aur.archlinux.org/shelly-bin.git
+    cd shelly-bin
     makepkg -si --noconfirm
     cp -a ~/HyprArch/config/. ~/.config/
     chmod +x ~/.config/hypr/scripts/theme-reload
@@ -80,7 +80,7 @@ main() {
     sudo sed -i 's/^HOOKS=.*/HOOKS=(systemd autodetect microcode modconf block filesystems)/' /etc/mkinitcpio.conf
     sudo mkinitcpio -P
     cd "$HOME"
-    rm -rf ~/HyprArch ~/paru-bin
+    rm -rf ~/HyprArch ~/shelly-bin
     sudo reboot
 }
 
