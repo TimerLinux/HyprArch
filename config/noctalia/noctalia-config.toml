@@ -7,6 +7,7 @@ end = [ "tray", "volume", "session" ]
 margin_ends = 720
 padding = 16
 radius = 80
+shadow = false
 start = [ "cpu", "sysmon", "ram", "workspaces" ]
 thickness = 32
 widget_spacing = 16
@@ -40,7 +41,9 @@ icon_size = 32
 item_spacing = 16
 launcher_custom_image = "~/.config/hypr/avatar.png"
 launcher_position = "start"
+pinned = [ "zen", "steam" ]
 radius = 80
+shadow = false
 show_dots = true
 
 [hooks]
@@ -129,6 +132,18 @@ wallpaper_scheme = "m3-content"
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kitty", "qt" ]
     enable_community_templates = false
+
+[wallpaper]
+directory = "/home/arch/Obrazy/Tapety"
+
+    [wallpaper.default]
+    path = "/home/arch/Obrazy/Tapety/2-autumn-landscape.webp"
+
+    [wallpaper.last]
+    path = "/home/arch/Obrazy/Tapety/2-autumn-landscape.webp"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/arch/Obrazy/Tapety/2-autumn-landscape.webp"
 
 [widget.clock]
 anchor = true
