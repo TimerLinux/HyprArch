@@ -26,14 +26,9 @@ main() {
     oxygen-cursors \
     nvidia-open \
     libva-nvidia-driver \
-    7zip \
-    unrar \
-    unzip \
-    zip \
     fuse2 \
     flatpak \
     reflector \
-    nano \
     noctalia-greeter \
     accountsservice \
     noctalia \
