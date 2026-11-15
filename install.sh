@@ -14,7 +14,6 @@ main() {
     fish \
     adw-gtk-theme \
     nwg-look \
-    qt6ct \
     qt6-wayland \
     qt5-wayland \
     pacman-contrib \
