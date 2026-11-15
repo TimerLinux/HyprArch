@@ -26,7 +26,6 @@ main() {
     oxygen-cursors \
     nvidia-open \
     libva-nvidia-driver \
-    nvidia-settings \
     7zip \
     unrar \
     unzip \
