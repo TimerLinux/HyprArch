@@ -14,35 +14,3 @@ gsettings set $key "$other"
 gsettings set $key "$current"
 
 systemctl --user restart xdg-desktop-portal-gtk
-
-reload_ct() {
-    local name="$1"
-    local conf="$HOME/.config/$name/$name.conf"
-    [ -f "$conf" ] || return 0
-
-    local orig
-    orig=$(grep -m1 '^color_scheme_path=' "$conf") || return 0
-
-    local perms
-    perms=$(stat -c %a "$conf")
-
-    local temp_scheme
-    temp_scheme=$(ls /usr/share/"$name"/colors/*.conf 2>/dev/null \
-                  | grep -vxF "${orig#color_scheme_path=}" | head -n1)
-    [ -n "$temp_scheme" ] || return 0
-
-    local dir tmp
-    dir=$(dirname "$conf")
-
-    tmp=$(mktemp "$dir/.qt-reload.XXXXXX")
-    sed "s|^color_scheme_path=.*|color_scheme_path=$temp_scheme|" "$conf" > "$tmp"
-    chmod "$perms" "$tmp"
-    mv -f "$tmp" "$conf"
-
-    tmp=$(mktemp "$dir/.qt-reload.XXXXXX")
-    sed "s|^color_scheme_path=.*|$orig|" "$conf" > "$tmp"
-    chmod "$perms" "$tmp"
-    mv -f "$tmp" "$conf"
-}
-
-reload_ct qt6ct
