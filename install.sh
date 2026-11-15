@@ -52,8 +52,7 @@ main() {
     smartmontools \
     wl-clipboard \
     man-db \
-    man-pages \
-    vlc
+    man-pages
     git clone https://github.com/TimerLinux/HyprArch.git
     https://aur.archlinux.org/shelly-bin.git
     cd shelly-bin
