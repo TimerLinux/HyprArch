@@ -21,6 +21,7 @@ main() {
     speech-dispatcher \
     python-pillow \
     icoextract \
+    ffmpegthumbnailer \
     git \
     oxygen-cursors \
     nvidia-open \
