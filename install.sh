@@ -29,17 +29,7 @@ main() {
     flatpak \
     reflector \
     noctalia-greeter \
-    accountsservice \
-    noctalia \
-    gvfs-mtp \
-    exfatprogs \
-    ntfs-3g \
-    dosfstools \
-    ffmpegthumbnailer \
-    smartmontools \
-    wl-clipboard \
-    man-db \
-    man-pages
+    noctalia
     git clone https://github.com/TimerLinux/HyprArch.git
     git clone https://aur.archlinux.org/shelly-bin.git
     cd shelly-bin
@@ -55,7 +45,6 @@ main() {
     sudo chsh -s /usr/bin/fish $USER
     sudo usermod -c "Arch Linux" $USER
     sudo noctalia-greeter passwordless-sync enable $USER
-    sudo systemctl enable --now accounts-daemon
     sudo systemctl enable --now btrfs-scrub@-.timer
     sudo systemctl enable --now paccache.timer
     sudo systemctl enable --now reflector.timer
