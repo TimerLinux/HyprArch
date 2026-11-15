@@ -3,7 +3,6 @@ main() {
     cd "$HOME" || exit 1
 
     sudo pacman -S --needed --noconfirm \
-    base-devel \
     hyprland \
     kitty \
     nautilus \
@@ -22,13 +21,14 @@ main() {
     python-pillow \
     icoextract \
     ffmpegthumbnailer \
-    git \
     oxygen-cursors \
     nvidia-open \
     libva-nvidia-driver \
     fuse2 \
     flatpak \
     reflector \
+    base-devel \
+    git \
     noctalia-greeter \
     noctalia
     git clone https://github.com/TimerLinux/HyprArch.git
