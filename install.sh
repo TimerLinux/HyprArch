@@ -38,7 +38,6 @@ main() {
     accountsservice \
     noctalia \
     gnome-text-editor \
-    gnome-calculator \
     breeze-icons \
     gvfs-mtp \
     exfatprogs \
