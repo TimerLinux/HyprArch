@@ -38,7 +38,6 @@ main() {
     accountsservice \
     noctalia \
     gnome-text-editor \
-    gnome-disk-utility \
     loupe \
     gnome-calculator \
     breeze-icons \
