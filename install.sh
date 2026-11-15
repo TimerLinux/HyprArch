@@ -38,7 +38,6 @@ main() {
     noctalia-greeter \
     accountsservice \
     noctalia \
-    gnome-text-editor \
     breeze-icons \
     gvfs-mtp \
     exfatprogs \
