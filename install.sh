@@ -31,7 +31,6 @@ main() {
     noctalia-greeter \
     accountsservice \
     noctalia \
-    breeze-icons \
     gvfs-mtp \
     exfatprogs \
     ntfs-3g \
