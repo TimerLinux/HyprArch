@@ -40,7 +40,6 @@ icon_size = 32
 item_spacing = 16
 launcher_custom_image = "~/.config/hypr/avatar.png"
 launcher_position = "start"
-pinned = [ "zen", "steam" ]
 radius = 80
 show_dots = true
 
@@ -121,14 +120,14 @@ settings_window_translucent = true
     alpha = 0.99999997764825821
 
 [theme]
-builtin = "Noctalia"
+builtin = "Catppuccin"
 community_palette = "Oxocarbon"
 mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kitty" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kitty", "qt" ]
     enable_community_templates = false
 
 [widget.clock]
