@@ -22,10 +22,3 @@ hl.window_rule({
     match            = { class = "^firefox$", float = false },
     fullscreen_state = "0 2",
 })
-
-hl.window_rule({
-    name  = "calculator-float",
-    match = { class = "^org\\.gnome\\.Calculator$" },
-    float = true,
-    center = true,
-})
