@@ -51,7 +51,7 @@ main() {
     man-db \
     man-pages
     git clone https://github.com/TimerLinux/HyprArch.git
-    https://aur.archlinux.org/shelly-bin.git
+    git clone https://aur.archlinux.org/shelly-bin.git
     cd shelly-bin
     makepkg -si --noconfirm
     cp -a ~/HyprArch/config/. ~/.config/
