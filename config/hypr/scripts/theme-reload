@@ -15,35 +15,6 @@ gsettings set $key "$current"
 
 systemctl --user restart xdg-desktop-portal-gtk
 
-fix_disabled() {
-    local f="$HOME/.config/$1/colors/noctalia.conf"
-    [ -f "$f" ] || return 0
-    awk -F'=' '
-        function hex(s, i) { s = tolower(s); return (index("0123456789abcdef", substr(s, i, 1)) - 1) * 16 + index("0123456789abcdef", substr(s, i + 1, 1)) - 1 }
-        function mix(a, b, t) {
-            return sprintf("#%02x%02x%02x", hex(a,2)*(1-t)+hex(b,2)*t, hex(a,4)*(1-t)+hex(b,4)*t, hex(a,6)*(1-t)+hex(b,6)*t)
-        }
-        /^active_colors=/ {
-            n = split($2, c, /, */)
-            win = c[11]
-            dim = mix(c[1], win, 0.55)
-            dis = "disabled_colors="
-            for (i = 1; i <= n; i++) {
-                v = c[i]
-                if (i == 1 || i == 7 || i == 9 || i == 21) v = dim
-                if (i == 3) v = win
-                dis = dis v (i < n ? ", " : "")
-            }
-            print; next
-        }
-        /^disabled_colors=/ { print dis; next }
-        { print }
-    ' "$f" > "$f.tmp" && mv -f "$f.tmp" "$f"
-}
-
-fix_disabled qt6ct
-fix_disabled qt5ct
-
 reload_ct() {
     local name="$1"
     local conf="$HOME/.config/$name/$name.conf"
@@ -75,4 +46,3 @@ reload_ct() {
 }
 
 reload_ct qt6ct
-reload_ct qt5ct
