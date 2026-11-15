@@ -73,6 +73,11 @@ main() {
     sudo mkinitcpio -P
     cd "$HOME"
     rm -rf ~/HyprArch ~/shelly-bin
+    sudo rm /usr/share/applications/lstopo.desktop
+    sudo rm /usr/share/applications/dev.noctalia.Noctalia.desktop
+    sudo rm /usr/share/applications/uuctl.desktop
+    sudo rm /usr/share/applications/qv4l2.desktop
+    sudo rm /usr/share/applications/qvidcap.desktop
     sudo reboot
 }
 
