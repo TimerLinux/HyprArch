@@ -39,7 +39,6 @@ main() {
     noctalia \
     gnome-text-editor \
     gnome-disk-utility \
-    baobab \
     loupe \
     gnome-calculator \
     breeze-icons \
