@@ -99,6 +99,7 @@ settings_window_translucent = true
     [shell.launcher]
     app_grid = true
     default_view = "all"
+    show_app_origin_indicator = false
     sort_by_usage = false
     track_usage = false
 
