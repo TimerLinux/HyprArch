@@ -38,7 +38,6 @@ main() {
     accountsservice \
     noctalia \
     gnome-text-editor \
-    loupe \
     gnome-calculator \
     breeze-icons \
     gvfs-mtp \
