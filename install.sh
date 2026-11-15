@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 main() {
     cd "$HOME" || exit 1
-
     sudo pacman -S --needed --noconfirm \
     hyprland \
     kitty \
@@ -63,5 +62,4 @@ main() {
     sudo rm /usr/share/applications/qvidcap.desktop
     sudo reboot
 }
-
 main "$@"; exit
