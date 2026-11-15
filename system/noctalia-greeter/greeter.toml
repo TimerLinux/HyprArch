@@ -1,3 +1,6 @@
+[session]
+default = "hyprland-uwsm"
+
 [cursor]
 theme = "Oxygen_White"
 size = 24
