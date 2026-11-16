@@ -5,6 +5,7 @@ main() {
     hyprland \
     kitty \
     nautilus \
+    bazaar \
     xdg-desktop-portal-hyprland \
     power-profiles-daemon \
     fastfetch \
