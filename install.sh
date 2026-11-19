@@ -6,11 +6,11 @@ main() {
     kitty \
     nautilus \
     firefox \
+    btop \
     bazaar \
     xdg-desktop-portal-hyprland \
     power-profiles-daemon \
     fastfetch \
-    btop \
     fish \
     adw-gtk-theme \
     nwg-look \
