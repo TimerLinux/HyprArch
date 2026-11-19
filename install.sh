@@ -7,13 +7,13 @@ main() {
     nautilus \
     firefox \
     btop \
+    nwg-look \
     bazaar \
     xdg-desktop-portal-hyprland \
     power-profiles-daemon \
     fastfetch \
     fish \
     adw-gtk-theme \
-    nwg-look \
     qt6-wayland \
     qt5-wayland \
     pacman-contrib \
