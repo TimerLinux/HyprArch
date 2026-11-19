@@ -16,8 +16,12 @@ hl.config({
     decoration = {
         rounding         = 20,
         rounding_power   = 2,
-    shadow = {
-        enabled = false,
+        shadow = {
+            enabled = true,
+            range = 14,
+            render_power = 3,
+            scale = 1.0,
+            color = "rgba(000000b0)",
         },
     blur = {
         enabled = true,
