@@ -17,11 +17,7 @@ hl.config({
         rounding         = 20,
         rounding_power   = 2,
         shadow = {
-            enabled = true,
-            range = 20,
-            render_power = 4,
-            scale = 1,
-            color = "rgba(000000b0)",
+            enabled = false,
         },
     blur = {
         enabled = true,
