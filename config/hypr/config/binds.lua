@@ -1,6 +1,5 @@
 local terminal    = "uwsm app -- kitty"
 local fileManager = "uwsm app -- nautilus --new-window"
-local text        = "uwsm app -- gnome-text-editor --new-window"
 local tasks	      = "uwsm app -- kitty -e btop"
 local mainMod     = "SUPER"
 local ipc         = "noctalia msg "
@@ -8,7 +7,6 @@ local ipc         = "noctalia msg "
 hl.bind(mainMod .. " + SPACE",     hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. " + RETURN",    hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E",         hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + T",         hl.dsp.exec_cmd(text))
 hl.bind(mainMod .. " + P",         hl.dsp.exec_cmd(tasks))
 
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
