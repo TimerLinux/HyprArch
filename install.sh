@@ -5,6 +5,7 @@ main() {
     hyprland \
     kitty \
     nautilus \
+    firefox \
     bazaar \
     xdg-desktop-portal-hyprland \
     power-profiles-daemon \
