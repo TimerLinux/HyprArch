@@ -5,7 +5,6 @@ main() {
     hyprland \
     kitty \
     nautilus \
-    firefox \
     btop \
     nwg-look \
     bazaar \
