@@ -17,7 +17,6 @@ main() {
     qt5-wayland \
     pacman-contrib \
     uwsm \
-    speech-dispatcher \
     python-pillow \
     icoextract \
     ffmpegthumbnailer \
