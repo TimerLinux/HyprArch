@@ -3,5 +3,5 @@ hl.monitor({
     mode      = "highrr",
     position  = "0x0",
     scale     = "1",
-    cm        = "edid"
+    cm        = "edid",
 })
