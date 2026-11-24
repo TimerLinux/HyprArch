@@ -24,7 +24,7 @@ hl.config({
         size = 4,
         passes = 4,
         xray = false,
-        new_optimizations = true
+        new_optimizations = true,
     },
     },
 })
