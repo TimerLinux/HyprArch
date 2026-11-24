@@ -24,7 +24,6 @@ main() {
     ffmpegthumbnailer \
     oxygen-cursors \
     nvidia-open \
-    libva-nvidia-driver \
     fuse2 \
     flatpak \
     reflector \
