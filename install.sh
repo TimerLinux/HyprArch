@@ -6,6 +6,7 @@ main() {
     kitty \
     nautilus \
     firefox \
+    gnome-text-editor \
     btop \
     nwg-look \
     bazaar \
